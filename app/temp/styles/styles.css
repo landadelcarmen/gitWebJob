@@ -1000,10 +1000,14 @@ a {
 @media(min-width: 530px) {
 
 .site-header {
+		position: fixed;
 		background-color: rgba(47, 58, 114, .3)
 
 
 }
+		.site-header--dark {
+			background-color: rgba(23, 51, 72, .85);
+		}
 	}
 
 @media(min-width: 530px) {
@@ -1014,6 +1018,9 @@ a {
 	}
 
 .site-header__logo {
+		transition: -webkit-transform .3s ease-out;
+		transition: transform .3s ease-out;
+		transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 		position: absolute;
 		top: 0;
 		background-color: #2f5572;
@@ -1032,6 +1039,11 @@ a {
 			-webkit-transform: translateX(0);
 			        transform: translateX(0)
 	}
+
+			.site-header--dark .site-header__logo {
+				-webkit-transform: scale(.565);
+				        transform: scale(.565);
+			}
 	}
 
 .site-header__logo__graphic {
@@ -1209,6 +1221,10 @@ a {
 			font-size: 1rem;
 			background-color: transparent
 	}
+
+			.primary-nav a.is-current-link {
+				color: #fabb69;
+			}
 	}
 
 .reveal-item {

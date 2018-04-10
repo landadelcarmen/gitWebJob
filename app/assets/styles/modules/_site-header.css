@@ -10,7 +10,11 @@
 	}
 
 	@mixin atSmall {
+		position: fixed;
 		background-color: rgba(47, 58, 114, .3);
+		&--dark {
+			background-color: rgba(23, 51, 72, .85);
+		}
 	}
 
 	&__btn-container {
@@ -20,6 +24,7 @@
 	}
 
 	&__logo {
+		transition: transform .3s ease-out;
 		position: absolute;
 		top: 0;
 		background-color: $mainBlue;
@@ -31,6 +36,10 @@
 		@mixin atSmall {
 			left: auto;
 			transform: translateX(0);
+
+			.site-header--dark & {
+				transform: scale(.565);
+			}
 		}
 	}
 
